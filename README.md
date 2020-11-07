@@ -2,7 +2,7 @@
 This programm is for assessing ones general cognitive abilities. You can e.g. use this to see if your brain works better in the morning or evening, or what impact caffeine has on your general cognitive abilities.
 
 The Assessment consists of 3 Types of Tasks: 
-* Speed Calcutation - adding 1 digit numbers as fast as possible
+* Speed Calcutation - adding 1-digit numbers as fast as possible
 * Count Ones - scanning a line of i,l and 1s and count only the 1s as fast as possible
 * Remember nums - remembering a few 3-digit numbers in 5 secconds
 
