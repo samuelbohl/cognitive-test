@@ -1,11 +1,7 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -130,6 +126,9 @@ public class Main {
 		
 	}
 	
+	/**
+	 * appends a new line in report.txt
+	 */
 	private static void logEnd() throws IOException {
 		Path file = Path.of("./report.txt");
 		
@@ -137,32 +136,45 @@ public class Main {
 		Files.writeString(file, previous+"\n \n");
 		
 	}
-
+	
+	/**
+	 * logs the Assessment in report.txt
+	 */
 	public static void logReport(Assessment test, int blocksize) throws IOException {
 		Path file = Path.of("./report.txt");
 		String previous = Files.readString(file);
+		
 		String insertString = "";
 		int timeSum = 0, cnt = 0;
 		for(int i = 0; i < test.round; i++) {
+			//if its the begining of a block size, the difficulty changes
 			if(i%blocksize == 0) {
 				insertString += test+": (Difficulty: "+ (i/blocksize +1) +") \n";
 				timeSum = 0; cnt = 0;
 			}
-			
+			//appending the values of the i-th task
 			insertString += "("+test.correct[i]+ " " + test.times[i]+") ";
+			
+			//if the ith-task was correctly solved
 			if(test.correct[i]) {
 				cnt++;
 				timeSum += test.times[i];
 			}
+			
+			//if we reached the last task of this block and at least one task is solved correctly
 			if(i%blocksize == blocksize-1 && cnt != 0) {
 				double score = (double)cnt / timeSum * 10000;
 				insertString +=   score + " \n";
 			}
 		}
+		
+		//inserting the insertString to report.txt
 		Files.writeString(file, previous+insertString+"\n");
 		
 	}
-	
+	/**
+	 * start of log - title, date and comments
+	 */
 	public static void logStart(String comment) throws IOException {
 		Path file = Path.of("./report.txt");
 		
@@ -173,6 +185,9 @@ public class Main {
 		Files.writeString(file, previous+"CogniTest 1.0 Log "+ formatter.format(date) + " Comment: "+comment + "\n");
 	}
 	
+	/**
+	 * pause for "time" seconds
+	 */
 	public static void pause(int time) {
 		try {
 			TimeUnit.SECONDS.sleep(time);
@@ -181,6 +196,9 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * Clears commandline, depending on operating system
+	 */
 	public static void clearScreen() { 
 		try {
 	        final String os = System.getProperty("os.name");
