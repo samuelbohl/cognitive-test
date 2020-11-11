@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 public class SpeedCalc extends Assessment {
 
-	SpeedCalc(int rounds) {
-		super(rounds);
+	SpeedCalc(int rounds, int difficulty, String blockPrefix) {
+		super(rounds, difficulty, blockPrefix);
 	}
 	
 	/**
 	 * Prints the random generated "Sum Array" and measures the time the user needs to calculate the sum,
 	 * then saves the answer and the time of this round
 	 */
-	public void nextRound(Scanner input, int difficulty) {
-		int[] arraySum = generateSumArray(difficulty);
+	public void nextTask(Scanner input) {
+		int[] arraySum = generateSumArray();
 		
 		for(int i = 0; i < arraySum.length-1; ++i) {
 			if(i == arraySum.length-2) {
@@ -37,12 +37,11 @@ public class SpeedCalc extends Assessment {
 	 * generates array of 1 digit numbers (length depends on difficulty)
 	 * the sum of all elements is in the last element
 	 * 
-	 * @param difficulty (1 = easy; 2 = advanced)
-	 * @return
+	 * @difficulty (1 = easy; 2 = advanced)
 	 */
-	private int[] generateSumArray(int difficulty) {
-		difficulty = difficulty == 1 ? 5 : 7;
-		int[] sumArray = new int[difficulty+1];
+	private int[] generateSumArray() {
+		int size = difficulty == 1 ? 5 : 7;
+		int[] sumArray = new int[size+1];
 		
 		Random rand = new Random();
 		int sum = 0;
@@ -56,6 +55,27 @@ public class SpeedCalc extends Assessment {
 			sum += curNum;
 		}
 		return sumArray;
+	}
+	
+	/**
+	 * calculates and returns the score
+	 * Formula: (#number of correctly solved tasks) / (Sum of time used to solve the correct tasks) * 10000
+	 */
+	public double getScore() {
+		//if we did not finish this task
+		if(this.round < this.totalRounds) {
+			return -1;
+		}
+		
+		//summing up all times of correctly solved tasks and number of correctly solved tasks
+		int timeSum = 0, cnt = 0;
+		for(int i = 0; i < correct.length; i++) {
+			if(this.correct[i]) {
+				cnt++;
+				timeSum += this.times[i];
+			}
+		}
+		return (double)cnt / timeSum * 10000;
 	}
 
 	

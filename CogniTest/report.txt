@@ -50,3 +50,4 @@ Speed-Caclulation: (Difficulty: 2)
 (false 14282) (true 14140) (false 1004) (false 431) (false 432) (false 409) (false 452) (false 502) 0.07072135785007072 
 
 CogniTest 1.0 Log 07/11/2020 19:54:18 Comment: 
+CogniTest 1.0 Log 07/11/2020 22:29:51 Comment: 

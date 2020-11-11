@@ -12,16 +12,27 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		
 		//SpeedCal Blocks
-		SpeedCalc speedCalBlock1 = new SpeedCalc(16); // 2 * 8
-		SpeedCalc speedCalBlock2 = new SpeedCalc(16); // 2 * 8
+		SpeedCalc speedCalBlock1Easy = new SpeedCalc(8, 1, "First");
+		SpeedCalc speedCalBlock1Advanced = new SpeedCalc(8, 2, "First"); 
+		
+		SpeedCalc speedCalBlock2Easy = new SpeedCalc(8, 1, "Second");
+		SpeedCalc speedCalBlock2Advanced = new SpeedCalc(8, 2, "Second"); 
 		
 		//CountOnes Blocks
-		CountOnes countOnesBlock1 = new CountOnes(18); // 3 * 6
-		CountOnes countOnesBlock2 = new CountOnes(18); // 3 * 6
+		CountOnes countOnesBlock1Easy = new CountOnes(6, 1, "First");
+		CountOnes countOnesBlock1Advanced = new CountOnes(6, 2, "First");
+		CountOnes countOnesBlock1Hard = new CountOnes(6, 3, "First");
+		
+		CountOnes countOnesBlock2Easy = new CountOnes(6, 1, "Second");
+		CountOnes countOnesBlock2Advanced = new CountOnes(6, 2, "Second");
+		CountOnes countOnesBlock2Hard = new CountOnes(6, 3, "Second");
 		
 		//RememberNums Blocks
-		RememberNums RememberNums1 = new RememberNums(16); // 2 * 8
-		RememberNums RememberNums2 = new RememberNums(16); // 2 * 8
+		RememberNums RememberNums1Easy = new RememberNums(8, 1, "First");
+		RememberNums RememberNums1Advanced = new RememberNums(8, 2, "First");
+		
+		RememberNums RememberNums2Easy = new RememberNums(8, 1, "Second");
+		RememberNums RememberNums2Advanced = new RememberNums(8, 2, "Second");
 		
 		//adds comment from commandline for the logs
 		String comment = "";
@@ -33,99 +44,36 @@ public class Main {
 		
 		//Test Routine
 		
-		clearScreen();
 		System.out.println("Welcome to the CogniTest 1.0");
 		
-		System.out.println("First Block of Speed-Calculation: (Difficulty: 1) ");
-		pause(2);
-		speedCalBlock1.runRounds(8, input, 1);
-		clearScreen();
-
-		System.out.println("First Block of Speed-Calculation: (Difficulty: 2) ");
-		pause(2);
-		speedCalBlock1.runRounds(8, input, 2);
-		clearScreen();
+		speedCalBlock1Easy.runTasks(input);
+		speedCalBlock1Advanced.runTasks(input);
 		
-		logReport(speedCalBlock1, 8);
+		countOnesBlock1Easy.runTasks(input);
+		countOnesBlock1Advanced.runTasks(input);
+		countOnesBlock1Hard.runTasks(input);
 		
-		System.out.println("First Block of Count Ones: (Difficulty: 1) ");
-		pause(2);
-		countOnesBlock1.runRounds(6, input, 1);
-		clearScreen();
-		
-		System.out.println("First Block of Count Ones: (Difficulty: 2) ");
-		pause(2);
-		countOnesBlock1.runRounds(6, input, 2);
-		clearScreen();
-		
-		System.out.println("First Block of Count Ones: (Difficulty: 3) ");
-		pause(2);
-		countOnesBlock1.runRounds(6, input, 3);
-		clearScreen();
-		
-		logReport(countOnesBlock1, 6);
-		
-		System.out.println("First Block of Remember Numbers: (Difficulty: 1) ");
-		pause(2);
-		RememberNums1.runRounds(8, input, 1);
-		clearScreen();
-		
-		System.out.println("First Block of Remember Numbers: (Difficulty: 1) ");
-		pause(2);
-		RememberNums1.runRounds(8, input, 2);
-		clearScreen();
-		
-		logReport(RememberNums1, 8);
+		RememberNums1Easy.runTasks(input);
+		RememberNums1Advanced.runTasks(input);
 		
 		// ROUND 2
 		
-		System.out.println("Seccond Block of Speed-Calculation: (Difficulty: 1) ");
-		pause(2);
-		speedCalBlock2.runRounds(8, input, 1);
-		clearScreen();
-
-		System.out.println("Seccond Block of Speed-Calculation: (Difficulty: 2) ");
-		pause(2);
-		speedCalBlock2.runRounds(8, input, 2);
-		clearScreen();
+		speedCalBlock2Easy.runTasks(input);
+		speedCalBlock2Advanced.runTasks(input);
 		
-		logReport(speedCalBlock2, 8);
+		countOnesBlock2Easy.runTasks(input);
+		countOnesBlock2Advanced.runTasks(input);
+		countOnesBlock2Hard.runTasks(input);
 		
-		System.out.println("Seccond Block of Count Ones: (Difficulty: 1) ");
-		pause(2);
-		countOnesBlock2.runRounds(6, input, 1);
-		clearScreen();
-		
-		System.out.println("Seccond Block of Count Ones: (Difficulty: 2) ");
-		pause(2);
-		countOnesBlock2.runRounds(6, input, 2);
-		clearScreen();
-		
-		System.out.println("Seccond Block of Count Ones: (Difficulty: 3) ");
-		pause(2);
-		countOnesBlock2.runRounds(6, input, 3);
-		clearScreen();
-		
-		logReport(countOnesBlock2, 6);
-		
-		System.out.println("Seccond Block of Remember Numbers: (Difficulty: 1) ");
-		pause(2);
-		RememberNums2.runRounds(8, input, 1);
-		clearScreen();
-		
-		System.out.println("Seccond Block of Remember Numbers: (Difficulty: 2 ) ");
-		pause(2);
-		RememberNums2.runRounds(8, input, 2);
-		clearScreen();
-		
-		logReport(RememberNums2, 8);
+		RememberNums2Easy.runTasks(input);
+		RememberNums2Advanced.runTasks(input);
 		
 		logEnd();
 		
 		//END Routine
 		
 	}
-	
+
 	/**
 	 * appends a new line in report.txt
 	 */
@@ -137,41 +85,7 @@ public class Main {
 		
 	}
 	
-	/**
-	 * logs the Assessment in report.txt
-	 */
-	public static void logReport(Assessment test, int blocksize) throws IOException {
-		Path file = Path.of("./report.txt");
-		String previous = Files.readString(file);
-		
-		String insertString = "";
-		int timeSum = 0, cnt = 0;
-		for(int i = 0; i < test.round; i++) {
-			//if its the begining of a block size, the difficulty changes
-			if(i%blocksize == 0) {
-				insertString += test+": (Difficulty: "+ (i/blocksize +1) +") \n";
-				timeSum = 0; cnt = 0;
-			}
-			//appending the values of the i-th task
-			insertString += "("+test.correct[i]+ " " + test.times[i]+") ";
-			
-			//if the ith-task was correctly solved
-			if(test.correct[i]) {
-				cnt++;
-				timeSum += test.times[i];
-			}
-			
-			//if we reached the last task of this block and at least one task is solved correctly
-			if(i%blocksize == blocksize-1 && cnt != 0) {
-				double score = (double)cnt / timeSum * 10000;
-				insertString +=   score + " \n";
-			}
-		}
-		
-		//inserting the insertString to report.txt
-		Files.writeString(file, previous+insertString+"\n");
-		
-	}
+	
 	/**
 	 * start of log - title, date and comments
 	 */
@@ -184,36 +98,5 @@ public class Main {
 	    String previous = Files.readString(file);
 		Files.writeString(file, previous+"CogniTest 1.0 Log "+ formatter.format(date) + " Comment: "+comment + "\n");
 	}
-	
-	/**
-	 * pause for "time" seconds
-	 */
-	public static void pause(int time) {
-		try {
-			TimeUnit.SECONDS.sleep(time);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Clears commandline, depending on operating system
-	 */
-	public static void clearScreen() { 
-		try {
-	        final String os = System.getProperty("os.name");
-
-	        if (os.contains("Windows")) {
-	        	new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-	        }
-	        else {
-	        	System.out.print("\033[H\033[2J");   
-	    	    System.out.flush(); 
-	        }
-	    } catch (final Exception e) {
-	    	
-	    }
-	      
-	 }
 
 }

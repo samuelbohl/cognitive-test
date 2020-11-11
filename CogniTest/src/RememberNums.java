@@ -6,8 +6,8 @@ public class RememberNums extends Assessment {
 	
 	int[] correctCount;
 	
-	RememberNums(int rounds) {
-		super(rounds);
+	RememberNums(int rounds, int difficulty, String blockPrefix) {
+		super(rounds, difficulty, blockPrefix);
 		correctCount = new int[rounds];
 	}
 	
@@ -15,8 +15,8 @@ public class RememberNums extends Assessment {
 	 * Prints the random generated "Numbers Array" and after a 5sec timeout, checks if user input equals to the numbers shown 
 	 * then saves the answer and the number of correctly remembered numbers.
 	 */
-	public void nextRound(Scanner input, int difficulty) {
-		int[] numArray = generateNumArray(difficulty);
+	public void nextTask(Scanner input) {
+		int[] numArray = generateNumArray();
 		
 		for(int i = 0; i < numArray.length; ++i) {
 			System.out.print(numArray[i] + " ");
@@ -44,36 +44,27 @@ public class RememberNums extends Assessment {
 	/**
 	 * generates an array with 3 or 5 (depending on difficulty) 3-digit numbers
 	 * 
-	 * @param difficulty (1 = easy; 2 = advanced)
-	 * @return 
+	 * @difficulty (1 = easy; 2 = advanced)
 	 */
-	private int[] generateNumArray(int difficulty) {
-		difficulty = difficulty == 1 ? 3 : 5;
+	private int[] generateNumArray() {
+		int size  = difficulty == 1 ? 3 : 5;
 		
 		Random rand = new Random();
-		int[] numArray = new int[difficulty];
-		for(int i = 0; i < difficulty; ++i) {
+		int[] numArray = new int[size];
+		for(int i = 0; i < size; ++i) {
 			numArray[i] = rand.nextInt(1000 - 100) + 100; 
 		}
 		return numArray;
 	}
 	
 	
-	private static void clearScreen() {   
-		try {
-	        final String os = System.getProperty("os.name");
-
-	        if (os.contains("Windows")) {
-	        	new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-	        }
-	        else {
-	        	System.out.print("\033[H\033[2J");   
-	    	    System.out.flush(); 
-	        }
-	    } catch (final Exception e) {
-	    	
-	    }  
-	 }
+	public double getScore() {
+		if(this.round < this.totalRounds) {
+			return -1;
+		}
+		
+		return 0;
+	}
 	
 	public String toString() {
 		return "Remember Numbers";
