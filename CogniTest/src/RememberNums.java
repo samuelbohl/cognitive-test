@@ -57,13 +57,21 @@ public class RememberNums extends Assessment {
 		return numArray;
 	}
 	
-	
+	/**
+	 * calculates and returns the score
+	 * Formula: (#number of memorized numbers) / (Sum of all displayd numbers, depending on difficulty) * 100
+	 */
 	public double getScore() {
 		if(this.round < this.totalRounds) {
 			return -1;
 		}
 		
-		return 0;
+		int totalCorrect = 0;
+		for(int i = 0; i < correctCount.length; ++i) {
+			totalCorrect += correctCount[i];
+		}
+		
+		return (double)totalCorrect / (difficulty == 1 ? 3*3 : 3*5) * 100;
 	}
 	
 	public String toString() {
