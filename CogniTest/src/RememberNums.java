@@ -42,17 +42,20 @@ public class RememberNums extends Assessment {
 	}
 	
 	/**
-	 * generates an array with 3 or 5 (depending on difficulty) 3-digit numbers
+	 * generates an array with 3 (or 5) (depending on difficulty) 3-digit (or 2-digit) numbers
 	 * 
 	 * @difficulty (1 = easy; 2 = advanced)
 	 */
 	private int[] generateNumArray() {
 		int size  = difficulty == 1 ? 3 : 5;
+		int min = difficulty == 1 ? 100 : 10;
+		int max = difficulty == 1 ? 1000 : 100;
 		
 		Random rand = new Random();
 		int[] numArray = new int[size];
 		for(int i = 0; i < size; ++i) {
-			numArray[i] = rand.nextInt(1000 - 100) + 100; 
+			
+			numArray[i] = rand.nextInt(max - min) + min; 
 		}
 		return numArray;
 	}
