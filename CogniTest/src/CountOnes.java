@@ -42,7 +42,7 @@ public class CountOnes extends Assessment {
 		
 		Random rand = new Random();
 		String[] OnesArray = new String[size];
-		for(int i = 0; i < difficulty; ++i) {
+		for(int i = 0; i < size; ++i) {
 			int nextRand = Math.abs(rand.nextInt()% 3);
 			if(nextRand == 1) {
 				OnesArray[i] = "1";
