@@ -51,3 +51,68 @@ Speed-Caclulation: (Difficulty: 2)
 
 CogniTest 1.0 Log 07/11/2020 19:54:18 Comment: 
 CogniTest 1.0 Log 07/11/2020 22:29:51 Comment: 
+CogniTest 1.0 Log 12/11/2020 20:20:21 Comment: 
+Speed-Caclulation: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Speed-Caclulation: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 3) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Remember Numbers: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Remember Numbers: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Speed-Caclulation: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+CogniTest 1.0 Log 12/11/2020 20:23:34 Comment: 
+Speed-Caclulation: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Speed-Caclulation: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 3) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Remember Numbers: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Remember Numbers: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Speed-Caclulation: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Speed-Caclulation: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 3) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Remember Numbers: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Remember Numbers: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+
+ 
+CogniTest 1.0 Log 12/11/2020 20:24:38 Comment: 
+Speed-Caclulation: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Speed-Caclulation: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 1) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+Count Ones: (Difficulty: 2) 
+(false 0) (false 0) (false 0) (false 0) (false 0) (false 0) Score: 0.0
+CogniTest 1.0 Log 12/11/2020 20:26:34 Comment: 
+Speed-Caclulation: (Difficulty: 1) 
+(false 3013) (false 2121) (false 2519) (false 1564) (false 1779) (false 1541) (false 1680) (false 1987) Score: 0.0
+CogniTest 1.0 Log 12/11/2020 20:28:06 Comment: 
+Speed-Caclulation: (Difficulty: 1) 
+(false 4500) (false 801) (false 575) (false 550) (false 547) (false 547) (false 634) (false 598) Score: 0.0
+Speed-Caclulation: (Difficulty: 2) 
+(false 800) (false 410) (false 431) (false 366) (false 404) (false 408) (false 408) (false 381) Score: 0.0

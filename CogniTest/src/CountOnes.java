@@ -12,7 +12,7 @@ public class CountOnes extends Assessment {
 	 * Prints the random generated "Ones Array" and measures the time the user needs to calculate the number of ones,
 	 * then saves the answer and the time of this round.
 	 */
-	public void nextTask(Scanner input) {
+	protected void nextTask(Scanner input) {
 		String[] onesArray = generateOnesArray();
 		
 		for(int i = 0; i < onesArray.length; ++i) {

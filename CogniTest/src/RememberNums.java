@@ -15,6 +15,7 @@ public class RememberNums extends Assessment {
 	 * Prints the random generated "Numbers Array" and after a 5sec timeout, checks if user input equals to the numbers shown 
 	 * then saves the answer and the number of correctly remembered numbers.
 	 */
+
 	public void nextTask(Scanner input) {
 		int[] numArray = generateNumArray();
 		

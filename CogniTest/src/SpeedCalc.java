@@ -45,15 +45,13 @@ public class SpeedCalc extends Assessment {
 		
 		Random rand = new Random();
 		int sum = 0;
-		for(int i = 0; i <= difficulty; ++i) {
-			if(i == difficulty) {
-				sumArray[i] = sum;
-				break;
-			} 
+		for(int i = 0; i <= size; ++i) {
 			int curNum = Math.abs(rand.nextInt() % 10);
 			sumArray[i] = curNum;
 			sum += curNum;
 		}
+		
+		sumArray[size] = sum;
 		return sumArray;
 	}
 	

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
-public class Assessment {
+public abstract class Assessment {
 	int round;
 	int totalRounds;
 	int[]times; 
@@ -22,9 +22,7 @@ public class Assessment {
 		this.blockPrefix = blockPrefix;
 	}
 	
-	private void nextTask(Scanner input) {
-
-	}
+	protected abstract void nextTask(Scanner input);
 	
 	
 	/**
