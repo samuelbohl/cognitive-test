@@ -103,7 +103,7 @@ public abstract class Assessment {
 	}
 	
 	
-	private double getScore() {
+	public double getScore() {
 		return 0;
 	}
 }
