@@ -96,7 +96,7 @@ public class Main {
 	    Date date = new Date(); 
 	    
 	    String previous = Files.readString(file);
-		Files.writeString(file, previous+"CogniTest 1.0 Log "+ formatter.format(date) + " Comment: "+comment + "\n");
+		Files.writeString(file, previous+"\nCogniTest 1.1 Log "+ formatter.format(date) + " Comment: "+comment + "\n");
 	}
 
 }
