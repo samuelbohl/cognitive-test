@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -76,6 +79,33 @@ public class RememberNums extends Assessment {
 		}
 		
 		return (double)totalCorrect / (difficulty == 1 ? 3*3 : 3*5) * 100;
+	}
+	
+	/**
+	 * logs the Assessment in report.txt
+	 */
+	public void log() {
+		Path file = Path.of("./report.txt");
+		String previous = "";
+		try {
+			previous = Files.readString(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		String insertString = this+": (Difficulty: "+ this.difficulty +") \n";;
+		for(int i = 0; i < totalRounds; i++) {
+			//appending the values of the i-th task
+			insertString += "("+this.correctCount[i]+ " of " + this.difficulty +") ";
+		}
+		
+		//inserting the insertString to report.txt
+		try {
+			Files.writeString(file, previous+insertString+"Score: "+getScore()+"\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public String toString() {

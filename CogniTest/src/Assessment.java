@@ -43,7 +43,7 @@ public abstract class Assessment {
 	/**
 	 * logs the Assessment in report.txt
 	 */
-	private void log() {
+	public void log() {
 		Path file = Path.of("./report.txt");
 		String previous = "";
 		try {
